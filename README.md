@@ -1,13 +1,13 @@
 
 # :robot: **CoinsBot V2 remade by ruwinou**
 
-## **Description**
+## :pencil: **Description**
 T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as pas les moyens ? Voici le bot qui va te servir, avec un système de coins, de team, de métiers et bien plus encore !
 
-## **Fonctionnalités**
+## :gear: **Fonctionnalités**
 - système d'économie
 
-## **Configuration**
+## :wrench: **Configuration**
 
 ### **Prérequis**
 - Discord.js (version 14.11.0)
@@ -40,10 +40,10 @@ T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as p
 }
 ```
 
-## **Contribution**
+## :raised_hands: **Contribution**
 Si tu souhaites contribuer à ce projet, n'hésite pas à ouvrir une pull request !
 
-## **License**
+## :page_facing_up: **License**
 Ce projet est sous license Apache. Voir le fichier `LICENSE` pour plus d'informations.
 
 ## **Support**
