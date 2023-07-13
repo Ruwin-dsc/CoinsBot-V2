@@ -2,7 +2,7 @@
 # :robot: **CoinsBot V2 remade by ruwinou**
 
 ## :pencil: **Description**
-T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as pas les moyens ? Voici le bot qui va te servir, avec un système de coins, de team, de métiers et bien plus encore !
+T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as pas les moyens ? Voici le bot qui va te rendre heureux, avec un système de coins, de team, de métiers et bien plus encore ! ATTENTION C'EST UNE VERSION REMADE DU BOT COINS DE MILLENIUM https://discord.gg/epicbots (j'ai juste refait le bot)
 
 ## :gear: **Fonctionnalités**
 - système d'économie
