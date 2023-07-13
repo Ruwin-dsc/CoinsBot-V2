@@ -15,7 +15,7 @@ T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as p
 - phpMyAdmin (voir étape instalation)
 
 ### **Étapes d'installation**
-1. Clone le repository : `git clone https://github.com/ton-repository.git`
+1. Clone le repository : `git clone https://github.com/Ruwin-dsc/CoinsBot-V2.git`
 2. Installe les dépendances : `npm install`
 3. Utilise phpMyAdmin et met le fichier `coinsbot.sql` dessus si tu n'as pas phpMyAdmin ou que tu ne sais pas l'utiliser je t'invite à te rendre dans le serveur https://discord.gg/cloudhive et demander un hébergeur avec phpMyAdmin pour le coinsBot (de la part de ruwinou) C'EST TOTALEMENT GRATUIT !!! Toutefois si t'as d'autre problème je t'invite à te rendre dans le serveur https://discord.gg/whitehall
 4. Configure ton fichier de configuration `config.json` avec les informations nécessaires.
