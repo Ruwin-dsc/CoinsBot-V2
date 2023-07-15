@@ -3,6 +3,7 @@
 
 ## :pencil: **Description**
 T'as toujours réver d'avoir un système d'économie sur ton serveur mais t'as pas les moyens ? Voici le bot qui va te rendre heureux, avec un système de coins, de team, de métiers et bien plus encore ! ATTENTION C'EST UNE VERSION REMADE DU BOT COINS DE MILLENIUM https://discord.gg/epicbots (j'ai juste refait le bot)
+Les commandes tels que &setprice, &settime ne sont pas disponible car vous pouvez les faire à la main puisque vous avez le code du bot, il sera peut-être disponible prochainement !
 
 ## :gear: **Fonctionnalités**
 - système d'économie
