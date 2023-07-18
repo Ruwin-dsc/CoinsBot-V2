@@ -17,7 +17,7 @@ module.exports = {
         if (!voiceState || !voiceState.channel) {
           return;
         }
-        bot.db.query(`SELECT * FROM user WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`, async (err, req) => {
+        bot.db.query(`SELECT * FROM user WHERE guildId = "${guild.id}" AND userId = "${member.id}"`, async (err, req) => {
           if(req[0].vocal == "off") return
 
         const cameraOn = voiceState.selfVideo || voiceState.selfCamera;
