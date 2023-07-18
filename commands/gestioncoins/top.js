@@ -25,6 +25,7 @@ exports.run = async (bot, message, args, color) => {
         countcoins1 = Number(countcoins1) + 1
         }
       });
+         if(leaderboardDescription = "") leaderboardDescription = "*Aucun utilisateur*"
 
       const lbCoins = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/Db_tN_Y54YNEZmqAFsDmqIqQT0PwwNIiJCWGac69E-o/https/images.emojiterra.com/twitter/v13.0/512px/1fa99.png`, url: 'https://discord.gg/zcN3sB5KSv' })
@@ -89,6 +90,7 @@ exports.run = async (bot, message, args, color) => {
         }
       });
 
+    if(leaderboardDescriptionBank = "") leaderboardDescriptionBank = "*Aucun utilisateur*"
       const lbBank = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins en banque sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/dimTtGJ41YBkBAWgxAAvRax2OaAl27krgLKswvAFCF8/https/www.emoji.co.uk/files/mozilla-emojis/travel-places-mozilla/11821-bank.png`, url: 'https://discord.gg/zcN3sB5KSv' })
         .setDescription(leaderboardDescriptionBank)
@@ -116,7 +118,10 @@ exports.run = async (bot, message, args, color) => {
         leaderboardDescriptionCoins += `${coinsCount}) ${newusername}\n\`${coins} coins\` :coin:\n`;
         coinsCount = Number(coinsCount) + 1
         }
+          
       });
+
+        if(leaderboardDescriptionCoins = "") leaderboardDescriptionCoins = "*Aucun utilisateur*"
 
       const lbCoins = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/Db_tN_Y54YNEZmqAFsDmqIqQT0PwwNIiJCWGac69E-o/https/images.emojiterra.com/twitter/v13.0/512px/1fa99.png`, url: 'https://discord.gg/zcN3sB5KSv' })
@@ -145,6 +150,8 @@ exports.run = async (bot, message, args, color) => {
         repCount = Number(repCount) + 1
         }
       });
+
+    if(leaderboardDescriptionReputation = "") leaderboardDescriptionReputation = "*Aucun utilisateur*"
 
       const lbRep = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des réputations sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/dimTtGJ41YBkBAWgxAAvRax2OaAl27krgLKswvAFCF8/https/www.emoji.co.uk/files/mozilla-emojis/travel-places-mozilla/11821-bank.png`, url: 'https://discord.gg/zcN3sB5KSv' })
