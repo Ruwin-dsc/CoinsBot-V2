@@ -14,13 +14,13 @@ exports.run = async (bot, message, args, color) => {
 
     if(args[0] == "add") {
         bot.db.query(`UPDATE commands SET adds = "off" WHERE guildId = '${message.guild.id}'`)
-        message.reply(`La commande \`${prefix}add\` a été débloqué !`)
+        message.reply(`La commande \`${bot.prefix}add\` a été débloqué !`)
     } else if(args[0] == "remove") {
         bot.db.query(`UPDATE commands SET remove = "off" WHERE guildId = '${message.guild.id}'`)
-        message.reply(`La commande \`${prefix}remove\` a été débloqué !`)
+        message.reply(`La commande \`${bot.prefix}remove\` a été débloqué !`)
     } else if(args[0] == "reset") {
         bot.db.query(`UPDATE commands SET reset = "off" WHERE guildId = '${message.guild.id}'`)
-        message.reply(`La commande \`${prefix}reset\` a été débloqué !`)
+        message.reply(`La commande \`${bot.prefix}reset\` a été débloqué !`)
     }
 
 }
