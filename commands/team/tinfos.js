@@ -11,7 +11,7 @@ exports.help = {
 exports.run = async (bot, message, args, color) => {
     let name, description, coins, reputation, impot, reputrestant, avatarURL = null, bannerURL = null;
 
-    if(!args[0]) { // give perms cmd nrml 
+    if(!args[0]) { 
     bot.db.query(`SELECT * FROM user WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`, async (err, req) => {
         const teamid = req[0].team
         if(teamid == 'no') return message.reply(`:x: Vous n'appartenez à aucune team !`)
@@ -32,7 +32,9 @@ exports.run = async (bot, message, args, color) => {
             }
 
             if(req[0].avatar !== "yes" || req[0].avatar !== "no") avatarURL = req[0].avatar
+            if(req[0].avatar == "yes" || req[0].avatar == "no") avatarURL = null
             if(req[0].banner !== "yes" || req[0].banner !== "no") bannerURL = req[0].banner
+            if(req[0].banner == "yes" || req[0].banner == "no") bannerURL = null
             
             bot.db.query(`SELECT * FROM tmembers WHERE guildId = "${message.guild.id}" AND teamId = "${teamid}"`, async (err, req) => {
 
