@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 
-const cooldownTime = 1 * 0 * 0;
+const cooldownTime = 2 * 60 * 60;
 
 const cooldownshack = new Map();
 
