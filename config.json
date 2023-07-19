@@ -3,6 +3,8 @@
     "ownerId": ["ID BUYER"],
     "linkbot": "LA BAH TU METS LE LIEN DU BOT oe ça va servir à rien c juste pour le style", 
         "BDD": {
+        "note": "si tu ne comprend pas ce qu'il faut faire je te coneille d'aller voir le readme du github ou rejoindre le support https://discord.gg/zcN3sB5KSv",
+        "host": "127.0.0.1",
         "host": "127.0.0.1",
         "port": "3306",
         "user": "root",
