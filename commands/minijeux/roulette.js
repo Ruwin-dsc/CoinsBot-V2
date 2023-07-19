@@ -23,6 +23,7 @@ exports.run = async (bot, message, args, color) => {
     mise = args[0];
     if (isNaN(mise) && mise !== "all") return message.reply(":x: Ceci n'est pas un chiffre valide !");
     if (mise < 50) return message.reply(":x: Vous devez miser un chiffre supérieur à 50 !");
+    if (!args[1]) return message.channel.send({ embeds: [noargs0] });
     const couleurOuNumero = args[1].toLowerCase();
 
     let type;
