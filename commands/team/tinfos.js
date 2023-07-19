@@ -84,7 +84,9 @@ exports.run = async (bot, message, args, color) => {
             }
 
             if(req[0].avatar !== "yes" || req[0].avatar !== "no") avatarURL = req[0].avatar
+            if(req[0].avatar == "yes" || req[0].avatar == "no") avatarURL = null
             if(req[0].banner !== "yes" || req[0].banner !== "no") bannerURL = req[0].banner
+            if(req[0].banner == "yes" || req[0].banner == "no") bannerURL = null
             
             bot.db.query(`SELECT * FROM tmembers WHERE guildId = "${message.guild.id}" AND teamId = "${teamid}"`, async (err, req) => {
 
