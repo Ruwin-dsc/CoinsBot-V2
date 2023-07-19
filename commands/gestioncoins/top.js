@@ -9,9 +9,14 @@ exports.help = {
 }
 
 exports.run = async (bot, message, args, color) => {
+  let rep, coins, bank
+  bot.db.query(`SELECT * FROM user WHERE guildId = '${message.guild.id}'`, async (err, req) => {
+    bank = req[0].banque
+    rep = req[0].reputation
+    if(req[0].coins == "0") return message.reply(`Le top n'est pas disponible car persone a de coins dans sa poche`)
 
 
-     bot.db.query(`SELECT * FROM user ORDER BY coins DESC LIMIT 10`, async (err, req) => {
+     bot.db.query(`SELECT * FROM user WHERE guildId = '${message.guild.id}' ORDER BY coins DESC LIMIT 10`, async (err, req) => {
      let leaderboardDescription = ""
      let countcoins1 = 1
      let newusername
@@ -25,7 +30,6 @@ exports.run = async (bot, message, args, color) => {
         countcoins1 = Number(countcoins1) + 1
         }
       });
-         if(leaderboardDescription = "") leaderboardDescription = "*Aucun utilisateur*"
 
       const lbCoins = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/Db_tN_Y54YNEZmqAFsDmqIqQT0PwwNIiJCWGac69E-o/https/images.emojiterra.com/twitter/v13.0/512px/1fa99.png`, url: 'https://discord.gg/zcN3sB5KSv' })
@@ -74,6 +78,7 @@ exports.run = async (bot, message, args, color) => {
             await i.deferUpdate()
 
             if (i.values[0] == "top_bank") {
+              if(bank == "0") return message.reply(`Le top n'est pas disponible car persone a de coins dans sa banque`)
               if(i.user.id !== message.author.id) return i.reply({ content: `Vous n'avez pas la permission !`, ephemeral: true})
                  bot.db.query(`SELECT * FROM user ORDER BY banque DESC LIMIT 10`, async (err, req) => {
      let leaderboardDescriptionBank = ""
@@ -90,7 +95,6 @@ exports.run = async (bot, message, args, color) => {
         }
       });
 
-    if(leaderboardDescriptionBank = "") leaderboardDescriptionBank = "*Aucun utilisateur*"
       const lbBank = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins en banque sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/dimTtGJ41YBkBAWgxAAvRax2OaAl27krgLKswvAFCF8/https/www.emoji.co.uk/files/mozilla-emojis/travel-places-mozilla/11821-bank.png`, url: 'https://discord.gg/zcN3sB5KSv' })
         .setDescription(leaderboardDescriptionBank)
@@ -118,10 +122,7 @@ exports.run = async (bot, message, args, color) => {
         leaderboardDescriptionCoins += `${coinsCount}) ${newusername}\n\`${coins} coins\` :coin:\n`;
         coinsCount = Number(coinsCount) + 1
         }
-          
       });
-
-        if(leaderboardDescriptionCoins = "") leaderboardDescriptionCoins = "*Aucun utilisateur*"
 
       const lbCoins = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des coins sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/Db_tN_Y54YNEZmqAFsDmqIqQT0PwwNIiJCWGac69E-o/https/images.emojiterra.com/twitter/v13.0/512px/1fa99.png`, url: 'https://discord.gg/zcN3sB5KSv' })
@@ -135,6 +136,7 @@ exports.run = async (bot, message, args, color) => {
             }
 
             if (i.values[0] == "top_rep") {
+              if(rep == "0") return message.reply(`Le top n'est pas disponible car persone n'a de reputation`)
               if(i.user.id !== message.author.id) return i.reply({ content: `Vous n'avez pas la permission !`, ephemeral: true})
                  bot.db.query(`SELECT * FROM user ORDER BY reputation DESC LIMIT 10`, async (err, req) => {
      let leaderboardDescriptionReputation = ""
@@ -151,8 +153,6 @@ exports.run = async (bot, message, args, color) => {
         }
       });
 
-    if(leaderboardDescriptionReputation = "") leaderboardDescriptionReputation = "*Aucun utilisateur*"
-
       const lbRep = new Discord.EmbedBuilder()
         .setAuthor({ name: `Leaderboard des réputations sur ${message.guild.name}`, iconURL: `https://images-ext-2.discordapp.net/external/dimTtGJ41YBkBAWgxAAvRax2OaAl27krgLKswvAFCF8/https/www.emoji.co.uk/files/mozilla-emojis/travel-places-mozilla/11821-bank.png`, url: 'https://discord.gg/zcN3sB5KSv' })
         .setDescription(leaderboardDescriptionReputation)
@@ -167,6 +167,7 @@ exports.run = async (bot, message, args, color) => {
         })
 
 
+     })
      })
     
 }
