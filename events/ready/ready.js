@@ -25,7 +25,7 @@ module.exports = {
               {
                 name: `${req[0].statut}`,
                 type: Discord.ActivityType.Streaming,
-                url: 'https://twitch.tv/coinsbotremade',
+                url: 'https://twitch.tv/ruwin2007yt',
               },
             ],
           });
@@ -54,6 +54,16 @@ module.exports = {
           }
 
           if(req[0].type == 'Watching') {
+            bot.user.setPresence({
+              activities: [
+                {
+                  name: `${req[0].statut}`,
+                  type: Discord.ActivityType.Watching,
+                },
+              ],
+            });
+          }
+        if(req[0].type == 'watching') {
             bot.user.setPresence({
               activities: [
                 {
