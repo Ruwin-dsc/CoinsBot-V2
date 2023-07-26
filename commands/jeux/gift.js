@@ -102,7 +102,7 @@ exports.run = async (bot, message, args, color) => {
                         { name: `Carte 3\n`, value: `\`${money3}\``, inline: false },
                         )
                     .setColor(embedColor)
-                    cooldownsgift.set(message.author.id, Math.floor(Date.now() / 1000));
+                        cooldownsgift.set(message.author.id + message.guild.id, Math.floor(Date.now() / 1000));
                     msg.edit({ embeds: [EmbedDIscord], components: [] })
                 }
 
@@ -131,7 +131,7 @@ exports.run = async (bot, message, args, color) => {
                         { name: `Carte 3\n`, value: `\`${money3}\``, inline: false },
                         )
                     .setColor(embedColor)
-                    cooldownsgift.set(message.author.id, Math.floor(Date.now() / 1000));
+                    cooldownsgift.set(message.author.id + message.guild.id, Math.floor(Date.now() / 1000));
                     msg.edit({ embeds: [EmbedDIscord], components: [] })
                 }
 
