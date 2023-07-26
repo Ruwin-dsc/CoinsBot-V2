@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 exports.help = {
-    name: "twith",
+    name: "tleave",
     category: "team",
     aliases: ["t-leave"],
     description: "Permet de quitter votre team actuelle",
