@@ -75,7 +75,7 @@ exports.run = async (bot, message, args, color) => {
                             }).then(async (collected) => {
                             if(isNaN(collected.first().content)) return collected.first().reply(':x: Ceci n\'est pas un chiffre valide !');
                             if(collected.first().content < 5) return collected.first().reply(`Vous devez vendre 5 ${minerais} minimum !`);
-                            if(collected.first().content < minerais2) return collected.first().reply(':x: Vous n\'avez pas assez de ce minerais !');
+                            if(Number(minerais2) < collected.first().content) return collected.first().reply(':x: Vous n\'avez pas assez de ce minerais !');
 
                             price = Number(prix[minerais]) * Number(collected.first().content);
                             nombreminerais = collected.first().content;
@@ -112,7 +112,7 @@ exports.run = async (bot, message, args, color) => {
                             }).then(async (collected) => {
                             if(isNaN(collected.first().content)) return collected.first().reply(':x: Ceci n\'est pas un chiffre valide !');
                             if(collected.first().content < 5) return collected.first().reply(`Vous devez vendre 5 ${minerais} minimum !`);
-                            if(collected.first().content < minerais2) return collected.first().reply(':x: Vous n\'avez pas assez de ce minerais !');
+                            if(Number(minerais2) < collected.first().content) return collected.first().reply(':x: Vous n\'avez pas assez de ce minerais !');
 
                             price = Number(prix[minerais]) * Number(collected.first().content);
                             nombreminerais = collected.first().content;
