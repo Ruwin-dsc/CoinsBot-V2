@@ -101,7 +101,7 @@ exports.run = async (bot, message, args, color) => {
         collector2.on('collect', (button) => {
             button.deferUpdate()
             if (button.customId === "dropgo") {
-                bot.db.query(`UPDATE user SET coins = coins + ${args[0]} WHERE guildId = '${message.guild.id}' AND userId = '${message.author.id}'`)
+                bot.db.query(`UPDATE user SET coins = coins + ${args[0]} WHERE guildId = '${message.guild.id}' AND userId = '${button.user.id}'`)
                 channel.send(`${button.user} a attrapé le colis ! Il vient de gagner \`${args[0]} coins\``)
             }
         })
