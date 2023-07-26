@@ -55,7 +55,7 @@ exports.run = async (bot, message, args, color) => {
 
                                     const teamEmbed = new Discord.EmbedBuilder()
                                     .setTitle(`Team créée !`)
-                                    .setDescription(`Nom: ${msg}\nID: ${req.length}\nDescription: ${msg2}\nLeader: ${message.author}\nDate de création: <t:${Date.now()}:f>`)
+                                    .setDescription(`Nom: ${msg}\nID: ${req.length}\nDescription: ${msg2}\nLeader: ${message.author}\nDate de création: <t:${Math.floor(Date.now() / 1000)}:f>`)
                                     .setColor(color)
                                     
                                     bot.db.query(`INSERT INTO team (guildId, ownerId, id, nom, description, date) VALUES ("${message.guild.id}", "${message.author.id}", "${req.length}", "${msg}", "${msg2}", "${Date.now()}")`)
