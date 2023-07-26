@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const blackjack = require('discord-blackjack')
+const blackjack = require('whitehall')
 
 exports.help = {
   name: "blackjack",
