@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "discord-blackjack": "^4.0.0",
+    "whitehall": "^1.0.3"
     "discord.js": "^14.11.0",
     "fs": "^0.0.1-security",
     "ms": "^2.1.3",
