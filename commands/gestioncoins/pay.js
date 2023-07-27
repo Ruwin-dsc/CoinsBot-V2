@@ -46,6 +46,23 @@ exports.run = async (bot, message, args, color) => {
 
 
         await message.channel.send({ content: `:coin: Vous venez de payer \`${mention.user.username}\` un montant de \`${Number(args[1])} coins\`` })
+        bot.db.query(`SELECT * FROM logs WHERE guildId = "${message.guild.id}"`, async (err, req) => {
+          const voc = req[0].logstransac
+          if(!voc) return
+          if(voc == null) return
+          const channelvoc = bot.channels.cache.get(voc);
+          if(!channelvoc) return
+          bot.db.query(`SELECT * FROM user WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`, async (err, req) => {
+          const embedLogs = new Discord.EmbedBuilder()
+          .setAuthor({ name: `${message.author.username}`, iconURL: message.author.displayAvatarURL({ dynamic: true }), url: 'https://discord.gg/zcN3sB5KSv' })
+          .setDescription(`${message.author} vient de payer \`${args[1]} coins\` à ${mention}`)
+          .setTimestamp()
+          .setColor(req[0].color)
+
+          channelvoc.send({ embeds: [embedLogs] })
+          })
+
+        })
       } else {
         return message.reply({ embeds: [pasassezwhitehall]})  
       }
