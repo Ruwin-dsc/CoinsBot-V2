@@ -56,9 +56,12 @@ bot.on("messageCreate", (message) => {
   if (!message.guild) return;
   let pref;
   bot.db.query(`SELECT * FROM guild WHERE guildId = "${message.guild.id}"`, async (err, req) => {
-      if (req.length < 1) return;
-      pref = req[0].prefix;
+      if (req.length < 1) {
+        pref = "&"
+      } else {
+        pref = req[0].prefix;
       if (!pref) pref = "&";
+      }
       bot.prefix = pref;
     }
   );
