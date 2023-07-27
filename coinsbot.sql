@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 18 juil. 2023 à 15:21
--- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.2.0
+-- Généré le : jeu. 27 juil. 2023 à 15:20
+-- Version du serveur : 10.5.19-MariaDB-0+deb11u2
+-- Version de PHP : 8.1.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `coinsbot`
+-- Base de données : `s67_coinsbot`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE `batiment` (
 CREATE TABLE `bot` (
   `botId` varchar(255) DEFAULT NULL,
   `statut` varchar(255) NOT NULL DEFAULT '❤️ Remade by ruwinou /zcN3sB5KSv',
-  `type` varchar(255) NOT NULL DEFAULT 'watching'
+  `type` varchar(255) NOT NULL DEFAULT 'Watching'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -152,6 +152,15 @@ CREATE TABLE `list` (
   `whitelistId` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `list`
+--
+
+INSERT INTO `list` (`guildId`, `whitelistId`) VALUES
+('1014136063104647269', '905213571951112203'),
+('1121718364105101463', '974784359947194478'),
+('1014136063104647269', '820361590826205215');
+
 -- --------------------------------------------------------
 
 --
@@ -161,6 +170,31 @@ CREATE TABLE `list` (
 CREATE TABLE `list2` (
   `guildId` varchar(255) DEFAULT NULL,
   `ownerId` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `list2`
+--
+
+INSERT INTO `list2` (`guildId`, `ownerId`) VALUES
+('1014136063104647269', '929664821887115286'),
+('1014136063104647269', '1034613037618966589'),
+('1014136063104647269', '895784898873425965'),
+('1121718364105101463', '974784359947194478'),
+('1014136063104647269', '820361590826205215');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `logs`
+--
+
+CREATE TABLE `logs` (
+  `guildId` varchar(255) DEFAULT NULL,
+  `logstransac` varchar(255) DEFAULT NULL,
+  `logsimpots` varchar(255) DEFAULT NULL,
+  `logsvocal` varchar(255) DEFAULT NULL,
+  `logsxp` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -243,14 +277,6 @@ CREATE TABLE `xp` (
   `msg` varchar(255) NOT NULL DEFAULT '5',
   `vocal` varchar(255) NOT NULL DEFAULT '10'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `xp`
---
-
-INSERT INTO `xp` (`guildId`, `xp`, `msg`, `vocal`) VALUES
-('1121718364105101463', 'on', '5', '10'),
-('1069937639890899015', 'on', '5', '10');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
