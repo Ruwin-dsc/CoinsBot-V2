@@ -44,7 +44,7 @@ exports.run = async (bot, message, args, color) => {
         message.channel.send({ embeds: [embed] })
     } else {
        const embed = new Discord.EmbedBuilder()
-        .setTitle(`Configuration de l'xp`)
+        .setTitle(`Configuration de l'xp (pas dispo)`)
         .setDescription(`Pour changer le gain d'expérience par message envoyé, utilisez \`setxp msg <xp>\`\nPour changer les gains d'expérience grâce à l'activité vocale toutes les 15 minutes, utilisez \`setxp vocal <xp>\`\nPour désactiver le système d'expérience, utilisez \`setxp off\``)
         .setColor(color)
         .setThumbnail(`https://media.discordapp.net/attachments/1121718489829347358/1129786043701395576/1171-mc-xp.png?width=398&height=398`)
