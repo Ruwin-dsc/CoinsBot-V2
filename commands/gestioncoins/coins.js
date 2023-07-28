@@ -12,6 +12,7 @@ exports.run = async (bot, message, args, color) => {
     const mention = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
     bot.db.query(`SELECT * FROM user WHERE guildId = "${message.guild.id}" AND userId = "${mention.id}"`, async (err, req) => {
+        if(req.length < 1) return message.reply({ content: `:x: Cette utilisateur ne joue pas aux coins` })
 
         const coinsEmbed = new Discord.EmbedBuilder()
         .setAuthor({ name: mention.user.username, iconURL: mention.user.displayAvatarURL({ dynamic: true }), url: 'https://discord.gg/zcN3sB5KSv' })
