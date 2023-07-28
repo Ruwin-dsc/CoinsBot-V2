@@ -105,7 +105,6 @@ exports.run = async (bot, message, args, color) => {
 
     })
             }
-            
 
             if (i.values[0] == "top_coins") {
               if(i.user.id !== message.author.id) return i.reply({ content: `Vous n'avez pas la permission !`, ephemeral: true})
