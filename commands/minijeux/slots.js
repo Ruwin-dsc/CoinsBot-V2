@@ -38,7 +38,7 @@ exports.run = async (bot, message, args, color) => {
         const slotEmbed = new Discord.EmbedBuilder()
         .setAuthor({ name: `${fruitrandom()} | ${fruitrandom()} | ${fruitrandom()}` })
         .setThumbnail(`https://media.discordapp.net/attachments/1121718489829347358/1134406693216850042/tenor.gif?width=484&height=272`)
-        .setDescription(`ruwinou vient de lancer un **slots** en misant \`${numbercoins} coins\` !`)
+        .setDescription(`${message.author.username} vient de lancer un **slots** en misant \`${numbercoins} coins\` !`)
         .setColor(color)
         .setFooter({ text: `${message.author.username} | 10 secondes avant le résultat`, iconURL: message.author.displayAvatarURL({ dynamic: true })})
 
