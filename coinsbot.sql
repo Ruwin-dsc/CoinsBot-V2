@@ -113,6 +113,19 @@ CREATE TABLE `guild` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `items`
+--
+
+CREATE TABLE `items` (
+  `guildId` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `prix` varchar(255) DEFAULT NULL,
+  `roleId` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `job`
 --
 
