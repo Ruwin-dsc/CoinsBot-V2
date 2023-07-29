@@ -39,7 +39,7 @@ exports.run = async (bot, message, args, color) => {
         coinsuserdb = coinsuser + Number(args[1])
         coinsauthordb = coinsauthor - Number(args[1])
 
-        if(Number(coinsauthor) > Number(args[1])) {
+        if(Number(coinsauthor) >= Number(args[1])) {
 
        await bot.db.query(`UPDATE user SET coins = '${coinsauthordb}' WHERE guildId = '${message.guild.id}' AND userId = '${message.author.id}'`)
     await bot.db.query(`UPDATE user SET coins = '${coinsuserdb}' WHERE guildId = '${message.guild.id}' AND userId = '${mention.id}'`)
