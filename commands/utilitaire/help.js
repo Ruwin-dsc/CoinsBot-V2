@@ -96,7 +96,7 @@ bot.db.query(`SELECT * FROM gain WHERE guildId = ${message.guild.id}`, async (er
     .setFooter({ text: `Page 10/13 | By ruwinou & neiky.`, iconURL: bot.user.displayAvatarURL({ dynamic: true }) })
     const page11 = new Discord.EmbedBuilder()
     .setTitle(`:beginner: • Administration`)
-    .setDescription(`Utilisez \`${prefix}help [commande]\` pour obtenir des informations sur une commande\n\n*WHITELIST:*\n\`${prefix}add\`\n\`${prefix}remove\`\n\`${prefix}setgain\`\n\`${prefix}setgain\`\n\`${prefix}setxp\`\n\`${prefix}setlogs\`\n\`${prefix}setleaderboard\`\n\`${prefix}start\`\n\`${prefix}drop\`\n\`${prefix}start\`\n\`${prefix}course\`\n\n*OWNERS:*\n\`${prefix}reset\`\n\`${prefix}mybot\`\n\`${prefix}wl\`\n\`${prefix}unwl\`\n\`${prefix}block\`\n\`${prefix}unblock\`\n\`${prefix}tdelete\`\n\`${prefix}command\`\n\`${prefix}guilds\`\n\n*ADMINISTRATEUR:*\n\`${prefix}setprefix\``) 
+    .setDescription(`Utilisez \`${prefix}help [commande]\` pour obtenir des informations sur une commande\n\n*WHITELIST:*\n\`${prefix}add\`\n\`${prefix}remove\`\n\`${prefix}setgain\`\n\`${prefix}setgain\`\n\`${prefix}setxp\`\n\`${prefix}setlogs\`\n\`${prefix}setleaderboard\`\n\`${prefix}start\`\n\`${prefix}drop\`\n\`${prefix}start\`\n\`${prefix}course\`\n\n*OWNERS:*\n\`${prefix}reset\`\n\`${prefix}mybot\`\n\`${prefix}wl\`\n\`${prefix}unwl\`\n\`${prefix}block\`\n\`${prefix}unblock\`\n\`${prefix}tdelete\`\n\`${prefix}command\`\n\`${prefix}guilds\`\n\`${prefix}items\`\n\n*ADMINISTRATEUR:*\n\`${prefix}setprefix\``) 
     .setColor(color)
     .setFooter({ text: `Page 11/13 | By ruwinou & neiky.`, iconURL: bot.user.displayAvatarURL({ dynamic: true }) })
     const page12 = new Discord.EmbedBuilder()
