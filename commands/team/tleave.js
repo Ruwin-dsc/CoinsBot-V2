@@ -13,6 +13,17 @@ exports.run = async (bot, message, args, color) => {
         const teamid = req[0].team
         if(teamid == 'no') return message.reply(`:x: Vous n'appartenez à aucune team !`)
         bot.db.query(`SELECT * FROM tmembers WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`, async (err, req) => {
+            if(req[0].grade == "Créateur") {
+                bot.db.query(`UPDATE user SET team = "no" WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`); 
+                bot.db.query(`DELETE FROM team WHERE guildId = ${message.guild.id} AND id = ${teamid}`);
+                bot.db.query(`DELETE FROM tmembers WHERE guildId = ${message.guild.id} AND teamId = ${teamid}`);
+
+                const leaveEmbed = new Discord.EmbedBuilder()
+                .setTitle(`${message.author.username} vient de quitter la team ${req[0].nom}`)
+                .setDescription(`Il peut désormais rejoindre une nouvelle team ! Et la team a été supprimé !`)
+                message.reply({ embeds: [leaveEmbed] })
+            } else {
+
                 bot.db.query(`DELETE FROM tmembers WHERE guildId = ${message.guild.id} AND userId = ${message.author.id}`);
                 bot.db.query(`UPDATE user SET team = "no" WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`); 
                 bot.db.query(`SELECT * FROM team WHERE guildId = "${message.guild.id}" AND id = "${teamid}"`, async (err, req) => {
@@ -21,6 +32,7 @@ exports.run = async (bot, message, args, color) => {
                 .setDescription(`Il peut désormais rejoindre une nouvelle team !`)
                 message.reply({ embeds: [leaveEmbed] })
                 })
+            }
         })
     })
 
