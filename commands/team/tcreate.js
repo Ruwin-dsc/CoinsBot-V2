@@ -46,7 +46,7 @@ exports.run = async (bot, message, args, color) => {
                                 max: 1,
                                 time: 60000,
                                 }).then(async (collected2) => {
-                                    const msg2 = collected.first().content;
+                                    const msg2 = collected2.first().content;
                                     if(msg2 == "cancel") return message.channel.send(`:x: Action annulée`)
 
                                     if(msg2.length > 100) return message.channel.send(`:x: La description peut contenir 100 caractères maximum: action annulée`)
@@ -55,12 +55,12 @@ exports.run = async (bot, message, args, color) => {
 
                                     const teamEmbed = new Discord.EmbedBuilder()
                                     .setTitle(`Team créée !`)
-                                    .setDescription(`Nom: ${msg}\nID: ${req.length}\nDescription: ${msg2}\nLeader: ${message.author}\nDate de création: <t:${Math.floor(Date.now() / 1000)}:f>`)
+                                    .setDescription(`Nom: ${msg}\nID: ${Number(req.length) + 1}\nDescription: ${msg2}\nLeader: ${message.author}\nDate de création: <t:${Math.floor(Date.now() / 1000)}:f>`)
                                     .setColor(color)
                                     
-                                    bot.db.query(`INSERT INTO team (guildId, ownerId, id, nom, description, date) VALUES ("${message.guild.id}", "${message.author.id}", "${req.length}", "${msg}", "${msg2}", "${Date.now()}")`)
-                                    bot.db.query(`INSERT INTO tmembers (guildId, teamId, userId, grade) VALUES ("${message.guild.id}", "${req.length}", "${message.author.id}", "Créateur")`)
-                                    bot.db.query(`UPDATE user SET team = '${req.length}', coins = '${coinsfin}' WHERE guildId = '${message.guild.id}' AND userId = '${message.author.id}'`)
+                                    bot.db.query(`INSERT INTO team (guildId, ownerId, id, nom, description, date) VALUES ("${message.guild.id}", "${message.author.id}", "${Number(req.length) + 1}", "${msg}", "${msg2}", "${Date.now()}")`)
+                                    bot.db.query(`INSERT INTO tmembers (guildId, teamId, userId, grade) VALUES ("${message.guild.id}", "${Number(req.length) + 1}", "${message.author.id}", "Créateur")`)
+                                    bot.db.query(`UPDATE user SET team = '${Number(req.length) + 1}', coins = '${coinsfin}' WHERE guildId = '${message.guild.id}' AND userId = '${message.author.id}'`)
 
                                     message.reply({embeds: [teamEmbed]})
                                     })
@@ -72,3 +72,4 @@ exports.run = async (bot, message, args, color) => {
 
     })
 }
+
