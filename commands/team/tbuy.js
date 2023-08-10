@@ -36,7 +36,7 @@ exports.run = async (bot, message, args, color) => {
             })
         })
     } else {
-        const shopEmbed = Discord.EmbedBuilder()
+        const shopEmbed = new Discord.EmbedBuilder()
         .setTitle(`Voici la boutique des teams du serveur ${message.guild.name}`)
         .setDescription(`**cadena**\nPrix: 2 rep`)
         .setColor(color)
