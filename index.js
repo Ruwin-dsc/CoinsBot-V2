@@ -5,7 +5,7 @@ const {
   Partials
 } = require("discord.js");
 const bot = new Client({
-  intents: [
+  intents: [ 
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
