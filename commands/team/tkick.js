@@ -19,8 +19,8 @@ exports.run = async (bot, message, args, color) => {
             if(mention.id == message.author.id) return message.reply(":x: Vous ne pouvez pas vous kick vous-mêmes !")
             bot.db.query(`SELECT * FROM tmembers WHERE guildId = "${message.guild.id}" AND userId = "${mention.id}"`, async (err, req) => {
             if(req.length < 1) return message.reply(`:x: ${mention.user.username} ne fait pas parti de votre team !`)
-            bot.db.query(`DELETE FROM tmembers WHERE guildId = ${message.guild.id} AND userId = ${message.author.id}`);
-            bot.db.query(`UPDATE user SET team = "no" WHERE guildId = "${message.guild.id}" AND userId = "${message.author.id}"`); 
+            bot.db.query(`DELETE FROM tmembers WHERE guildId = ${message.guild.id} AND userId = ${mention.id}`);
+            bot.db.query(`UPDATE user SET team = "no" WHERE guildId = "${message.guild.id}" AND userId = "${mention.id}"`); 
             bot.db.query(`SELECT * FROM team WHERE guildId = "${message.guild.id}" AND id = "${teamid}"`, async (err, req) => {
                 const kickEmbed = new Discord.EmbedBuilder()
                 .setDescription(`${mention.user.username} a été kick de la team **${req[0].nom}** !`)
