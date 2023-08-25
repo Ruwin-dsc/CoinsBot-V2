@@ -52,6 +52,8 @@ exports.run = async (bot, message, args, color) => {
 
         if(Number(req[0].coins) == 0) return message.reply({ embeds: [nomoney] })
 
+        if(Number(req[0].coins) < Number(args[0])) return message.reply(":x: Vous n'avez pas tous cette argent !")
+
         coinsuser = Number(req[0].coins) - Number(args[0])
         bankuser = Number(req[0].banque) + Number(args[0])
 
