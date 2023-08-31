@@ -76,7 +76,7 @@ exports.run = async (bot, message, args, color) => {
      let countcoins = 1
      for (const row of Ordre.slice(0, 10)) {
       const userId = row.userId;
-      const coins = row.coins;
+      const coins = row.banque;
       const user = await message.guild.members.cache.get(userId);
       if (user && coins !== "0") {
         leaderboardDescriptionBank += `${countcoins}) ${user.user.username}\n\`${coins} coins\` :coin:\n`;
@@ -133,7 +133,7 @@ exports.run = async (bot, message, args, color) => {
             const coins = row.reputation;
             const user = await message.guild.members.cache.get(userId);
             if (user && coins !== "0") {
-              leaderboardDescriptionReputation += `${repCount}) ${user.user.username}\n\`${coins} coins\` :coin:\n`;
+              leaderboardDescriptionReputation += `${repCount}) ${user.user.username}\n\`${coins} rep\` :small_red_triangle:\n`;
               repCount++;
             } 
           }
