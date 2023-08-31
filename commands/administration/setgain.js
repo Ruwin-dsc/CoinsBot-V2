@@ -18,8 +18,7 @@ exports.run = async (bot, message, args, color) => {
     .setFooter(bot.footer)
 
     message.channel.send({ embeds: [embedDepart] })
-    }
-    if(args[0] == "work") {
+    } else if(args[0] == "work") {
         if(!args[1]) return message.channel.send(`:x: Arguments invalides !`)
         if(!args[2]) return message.channel.send(`:x: Arguments invalides !`)
         if(isNaN(args[1])) return message.reply(":x: Arguments invalides !")
